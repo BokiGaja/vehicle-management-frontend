@@ -28,7 +28,7 @@
   background-color: var(--buttonBlue) !important;
 }
 
-.details__loading {
+.vehicles_loading {
   display: flex;
   justify-content: center;
   align-items: center;

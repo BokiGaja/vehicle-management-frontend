@@ -48,7 +48,7 @@ const HomePage = () => {
   if (isLoading) {
     return (
       <Layout title="Loading...">
-        <Box className="details__loading">
+        <Box className="vehicles_loading">
           <CircularProgress />
         </Box>
       </Layout>

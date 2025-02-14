@@ -22,3 +22,10 @@
     line-height: 28px !important;
     color: var(--label) !important;
 }
+
+.details__loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

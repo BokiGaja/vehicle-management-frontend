@@ -39,7 +39,7 @@ const VehicleFormPage = () => {
   const queryClient = useQueryClient();
   useSetTitle(slug ? 'Edit vehicle' : 'Add new vehicle');
 
-  const { data: vehicle, isLoading } = useQuery({
+  const { data: vehicle, isLoading, isError: errorLoadingVehicle } = useQuery({
     queryKey: ["vehicle", slug],
     queryFn: () => fetchVehicleBySlug(slug!),
     enabled: !!slug,
@@ -92,7 +92,25 @@ const VehicleFormPage = () => {
     />
   ), [])
 
-  if (isLoading && slug) return <CircularProgress />;
+  if (isLoading) {
+    return (
+      <Layout title="Loading...">
+        <Box className="details__loading">
+          <CircularProgress />
+        </Box>
+      </Layout>
+    );
+  }
+
+  if (errorLoadingVehicle) {
+    return (
+      <Layout title="Error">
+        <Typography variant="h6" color="error" align="center">
+          Error loading vehicle details.
+        </Typography>
+      </Layout>
+    );
+  }
 
   return (
     <Layout title={slug ? 'Edit vehicle' : 'Add new vehicle'}>
