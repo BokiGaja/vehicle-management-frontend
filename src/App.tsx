@@ -5,6 +5,7 @@ import VehicleDetailPage from "./pages/VehicleDetailsPage/VehicleDetailPage.tsx"
 import VehicleFormPage from "./pages/VehicleFormPage/VehicleFormPage.tsx";
 import "./styles/fonts.css";
 import { ROUTES } from "./constants/routes.ts";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.tsx";
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
       <Route path={ROUTES.VEHICLE_DETAILS_PAGE()} element={<VehicleDetailPage />} />
       <Route path={ROUTES.NEW_VEHICLE} element={<VehicleFormPage />} />
       <Route path={ROUTES.VEHICLE_EDIT()} element={<VehicleFormPage />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 };
