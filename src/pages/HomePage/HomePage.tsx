@@ -3,7 +3,8 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { fetchVehicles } from "../../api/vehicleService.ts";
 import {
   List, CircularProgress,
-  Typography
+  Typography,
+  Box
 } from "@mui/material";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import Layout from "../../components/Layout/Layout.tsx";
@@ -14,7 +15,7 @@ import PrimaryButton from "../../components/Buttons/PrimaryButton/PrimaryButton.
 
 const HomePage = () => {
   useSetTitle("Vehicle list");
-  const { data, fetchNextPage, hasNextPage, isFetchingNextPage, status, isLoading } =
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isError, isLoading } =
     useInfiniteQuery({
       queryKey: ["vehicles"],
       queryFn: fetchVehicles,
@@ -44,8 +45,25 @@ const HomePage = () => {
     return () => observer.disconnect();
   }, [fetchNextPage, hasNextPage]);
 
-  if (isLoading) return <CircularProgress />;
-  if (status === "error") return <p>Error loading vehicles</p>;
+  if (isLoading) {
+    return (
+      <Layout title="Loading...">
+        <Box className="details__loading">
+          <CircularProgress />
+        </Box>
+      </Layout>
+    );
+  }
+
+  if (isError) {
+    return (
+      <Layout title="Error">
+        <Typography variant="h6" color="error" align="center">
+          Error loading vehicle details.
+        </Typography>
+      </Layout>
+    );
+  }
 
   return (
     <Layout title="Vehicle list">
