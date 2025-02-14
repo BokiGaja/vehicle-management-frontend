@@ -1,0 +1,29 @@
+.home__title {
+  font-size: 24px !important;
+  line-height: 28px !important;
+  color: var(--label) !important;
+}
+  
+.home__list {
+  background-color: white;
+  border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #00004B29;
+  padding-bottom: 0 !important;
+}
+  
+.home__observer {
+  height: 20px;
+}
+  
+.home__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.home__button {
+  background-color: var(--buttonBlue) !important;
+}

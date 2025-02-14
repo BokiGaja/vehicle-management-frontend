@@ -1,0 +1,28 @@
+.layout__header {
+  background-color: var(--primary) !important;
+  padding-left: 48px;
+  padding-top: 12;
+  padding-bottom: 12;
+  margin-top: 0px !important;
+  border-radius: 16px;
+}
+  
+.layout__title {
+  flex-grow: 1;
+  font-weight: 800 !important;
+  font-size: 48px !important;
+}
+  
+.layout__children-container {
+  margin-top: 16px;
+  background-color: var(--background);
+  border-radius: 8px;
+  padding: 16px;
+  height: 100%;
+}
+
+.layout__container { 
+  background-color: var(--background);
+  height: 100vh;
+}
+  

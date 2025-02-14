@@ -1,0 +1,14 @@
+  .home__list-item {
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .home__vehicle-name {
+    font-weight: 600 !important;
+    color: var(--label) !important;
+  }
+  
+  .home__vehicle-license {
+    color: grey;
+  }

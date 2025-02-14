@@ -1,0 +1,36 @@
+.details__container {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+  
+.details__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+}
+
+.details__row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+  
+.details__title {
+  font-weight: bold;
+  color: var(--label) !important;
+  margin-left: 10px !important;
+}
+
+.details__loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.action_buttons_conatiner {
+  display: flex;
+  justify-content: flex-end;
+}
