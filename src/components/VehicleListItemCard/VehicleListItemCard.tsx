@@ -15,28 +15,28 @@ interface Vehicle {
 }
 
 const VehicleListItemCard: React.FC<VehicleListItemCardProps> = ({ vehicle }) => {
-    return (
-        <ListItem
-            component={Link}
-            to={`/vehicles/${vehicle.slug}`}
-            className="home__list-item"
-        >
-            <ListItemAvatar>
-            <Avatar src={VehicleIcon} />
-            </ListItemAvatar>
-            <ListItemText
-            primary={
-                <Typography variant="body2" className="home__vehicle-name">
-                {vehicle.custom_name}
-                </Typography>
-            }
-            secondary={
-                <Typography variant="body2" className="home__vehicle-license">
-                {vehicle.license_plate}
-                </Typography>
-            }
-            />
-        </ListItem>
+  return (
+    <ListItem
+      component={Link}
+      to={`/vehicles/${vehicle.slug}`}
+      className="home__list-item"
+    >
+      <ListItemAvatar>
+        <Avatar src={VehicleIcon} />
+      </ListItemAvatar>
+      <ListItemText
+        primary={
+          <Typography variant="body2" className="home__vehicle-name">
+            {vehicle.custom_name}
+          </Typography>
+        }
+        secondary={
+          <Typography variant="body2" className="home__vehicle-license">
+            {vehicle.license_plate}
+          </Typography>
+        }
+      />
+    </ListItem>
     );
 };
 
